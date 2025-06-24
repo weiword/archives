@@ -1766,7 +1766,7 @@
             getCatalogTokenHTML(e) {
                 let t = ""
                   , n = e;
-                return t += '<a class="catalog-item token-link lazy-fade" id="token-link-' + e + '" href="/oraand/' + e + '">',
+                return t += '<a class="catalog-item token-link lazy-fade" id="token-link-' + e + '" href="/archives/oraand/' + e + '">',
                 t += '<div class="image-holder">',
                 t += '<img class="image lazy-load" data-src="' + this.thumbnailBaseURI + e + '-square.png?v=0"/>',
                 t += "</div>",
@@ -5266,12 +5266,12 @@
             async next() {
                 let e = this.tokenId;
                 e < await this.token.getTokenCount() - 1 ? e++ : e = 0,
-                this.index.gotoURL("/oraand/" + e)
+                this.index.gotoURL("/archives/oraand/" + e)
             }
             async prev() {
                 let e = this.tokenId;
                 e > 0 ? e-- : e = await this.token.getTokenCount() - 1,
-                this.index.gotoURL("/oraand/" + e)
+                this.index.gotoURL("/archives/oraand/" + e)
             }
             getData() {}
             setDownloadFilterType(e) {
@@ -5490,7 +5490,7 @@
                 }
                 t += '<div style="margin-top: 10px; display: flex">',
                 t += '<a href="https://opensea.io/assets/ethereum/0xf21ab54111eb5049e42f4794d2724658baa42fc1/' + this.tokenId + '" target="_blank" class="button" style="display: flex; justify-content: center; width: 130px; height: 40px; padding: 0; margin-right: 10px">OpenSea</a>',
-                t += '<a href="https://nopsta.com/oraand/i/' + this.tokenId + '.png" target="_blank" class="button" download="oraand-' + this.tokenId + '"  style="display: flex;  justify-content: center; width: 130px; height: 40px; padding: 0">Download Image</a>',
+                t += '<a href="https://nopsta.com/archives/oraand/i/' + this.tokenId + '.png" target="_blank" class="button" download="oraand-' + this.tokenId + '"  style="display: flex;  justify-content: center; width: 130px; height: 40px; padding: 0">Download Image</a>',
                 t += "</div>",
                 e.innerHTML = t,
                 this.timeOwned = await this.token.getTimeSinceLastTransfer(this.tokenId);
@@ -5774,7 +5774,7 @@
                 },
                 this.tokenPRGLoaded = !0,
                 this.token.requestCheckChanges(i),
-                this.index.gotoURL("/oraand/" + i)))
+                this.index.gotoURL("/archives/oraand/" + i)))
             }
         }
         class le {
@@ -6229,7 +6229,7 @@
                     break;
                 case "connected":
                     n.innerHTML = "Connected",
-                    s = '<a class="collection-link" href="/oraand/collection">' + this.token.getCurrentAccount() + "</a>",
+                    s = '<a class="collection-link" href="/archives/oraand/collection">' + this.token.getCurrentAccount() + "</a>",
                     this.loadNumberMinted(),
                     this.loadMintPrice(),
                     !1 !== this.url && this.catalog.showCatalog(),
